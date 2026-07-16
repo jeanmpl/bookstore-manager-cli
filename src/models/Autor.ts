@@ -3,7 +3,7 @@ export interface CriarAutorDTO {
   nacionalidade?: string | null;
 }
 
-export interface AtualizarAutorDTIO {
+export interface AtualizarAutorDTO {
   nome: string;
   nacionalidade?: string | null;
 }

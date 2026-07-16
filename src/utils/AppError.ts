@@ -9,7 +9,7 @@ interface DatabaseError {
   code?: string;
 }
 
-export function getFriendlyErrorMessage(error: DatabaseError): string {
+export function getFriendlyErrorMessage(error: unknown): string {
   if (error instanceof AppError) {
     return error.message;
   }
