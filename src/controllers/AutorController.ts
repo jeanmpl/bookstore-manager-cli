@@ -19,38 +19,38 @@ export class AutorController {
       console.log("4. Atualizar autor");
       console.log("5. Deletar autor");
       console.log("0. Voltar");
-    }
 
-    const option = await this.input.ask("\nEscolha uma opção: ");
+      const option = await this.input.ask("\nEscolha uma opção: ");
 
-    try {
-      switch (option) {
-        case "1":
-          await this.create();
-          break;
-        case "2":
-          await this.list();
-          break;
-        case "3":
-          await this.getById();
-          break;
-        case "4":
-          await this.update();
-          break;
-        case "5":
-          await this.delete();
-          break;
-        case "0":
-          running = false;
-          break;
-        default:
-          console.log("Opção inválida. Tente novamente.");
+      try {
+        switch (option) {
+          case "1":
+            await this.create();
+            break;
+          case "2":
+            await this.list();
+            break;
+          case "3":
+            await this.getById();
+            break;
+          case "4":
+            await this.update();
+            break;
+          case "5":
+            await this.delete();
+            break;
+          case "0":
+            running = false;
+            break;
+          default:
+            console.log("Opção inválida. Tente novamente.");
+        }
+      } catch (error) {
+        console.log(`Erro: ${getFriendlyErrorMessage(error)}`);
       }
-    } catch (error) {
-      console.log(`Erro: ${getFriendlyErrorMessage(error)}`);
-    }
 
-    await this.input.pause();
+      await this.input.pause();
+    }
   }
 
   private async create(): Promise<void> {
