@@ -1,13 +1,16 @@
 import { AutorController } from "../controllers/AutorController.js";
 import { ClienteController } from "../controllers/ClienteController.js";
-import { ConsoleInput } from "../utils/ConsoleInput.js";
+import { EmprestimoController } from "../controllers/EmprestimoController.js";
 import { LivroController } from "../controllers/LivroController.js";
+import { ConsoleInput } from "../utils/ConsoleInput.js";
+
 export class MainMenu {
   constructor(
     private readonly input: ConsoleInput,
     private readonly authorController: AutorController,
     private readonly bookController: LivroController,
     private readonly clientController: ClienteController,
+    private readonly loanController: EmprestimoController,
   ) {}
 
   async run(): Promise<void> {
@@ -37,7 +40,7 @@ export class MainMenu {
           await this.clientController.run();
           break;
         case "4":
-          console.log("Funcionalidade de empréstimos ainda não implementada.");
+          await this.loanController.run();
           break;
         case "5":
           console.log("Funcionalidade de relatórios ainda não implementada.");

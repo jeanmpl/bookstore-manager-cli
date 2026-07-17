@@ -12,7 +12,7 @@ export class AutorController {
     let running = true;
 
     while (running) {
-      console.log("\n=== Gerenciamento de Autores ===");
+      console.log("\n=== AUTORES ===");
       console.log("1. Criar autor");
       console.log("2. Listar autores");
       console.log("3. Consultar autor por ID");
