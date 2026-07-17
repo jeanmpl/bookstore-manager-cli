@@ -1,4 +1,4 @@
-export type StatusEmprestimo = "ativo" | "inativo";
+export type StatusEmprestimo = "ativo" | "devolvido";
 
 export interface CriarEmprestimoDTO {
   clienteId: number;
@@ -11,7 +11,7 @@ export class Emprestimo {
     public clienteId: number,
     public livroId: number,
     public dataEmprestimo: Date,
-    public dataPrevistaDevolucao: Date,
+    public dataPrevistaDevolucao: string,
     public dataDevolucao: Date | null,
     public status: StatusEmprestimo,
   ) {}
@@ -22,7 +22,7 @@ export interface EmprestimoDetalhado {
   clienteNome: string;
   livroTitulo: string;
   dataEmprestimo: Date;
-  dataPrevistaDevolucao: Date;
+  dataPrevistaDevolucao: string;
   dataDevolucao: Date | null;
   status: StatusEmprestimo;
 }
