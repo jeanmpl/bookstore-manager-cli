@@ -22,6 +22,7 @@ export class Livro {
     public isbn: string | null,
     public anoPublicacao: number | null,
     public quantidadeTotal: number,
+    public quantidadeDisponivel: number,
   ) {}
 }
 

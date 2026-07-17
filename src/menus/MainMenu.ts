@@ -1,11 +1,12 @@
 import { AutorController } from "../controllers/AutorController.js";
 import { ClienteController } from "../controllers/ClienteController.js";
 import { ConsoleInput } from "../utils/ConsoleInput.js";
-
+import { LivroController } from "../controllers/LivroController.js";
 export class MainMenu {
   constructor(
     private readonly input: ConsoleInput,
     private readonly authorController: AutorController,
+    private readonly bookController: LivroController,
     private readonly clientController: ClienteController,
   ) {}
 
@@ -30,7 +31,7 @@ export class MainMenu {
           await this.authorController.run();
           break;
         case "2":
-          console.log("Funcionalidade de livros ainda não implementada.");
+          await this.bookController.run();
           break;
         case "3":
           await this.clientController.run();
