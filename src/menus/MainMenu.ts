@@ -2,6 +2,7 @@ import { AutorController } from "../controllers/AutorController.js";
 import { ClienteController } from "../controllers/ClienteController.js";
 import { EmprestimoController } from "../controllers/EmprestimoController.js";
 import { LivroController } from "../controllers/LivroController.js";
+import { RelatorioController } from "../controllers/RelatorioController.js";
 import { ConsoleInput } from "../utils/ConsoleInput.js";
 
 export class MainMenu {
@@ -11,6 +12,7 @@ export class MainMenu {
     private readonly bookController: LivroController,
     private readonly clientController: ClienteController,
     private readonly loanController: EmprestimoController,
+    private readonly reportController: RelatorioController,
   ) {}
 
   async run(): Promise<void> {
@@ -43,7 +45,7 @@ export class MainMenu {
           await this.loanController.run();
           break;
         case "5":
-          console.log("Funcionalidade de relatórios ainda não implementada.");
+          await this.reportController.run();
           break;
         case "0":
           running = false;
