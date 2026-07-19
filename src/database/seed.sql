@@ -21,7 +21,11 @@ VALUES
     ('J. R. R. Tolkien', 'Britânica'),
     ('Agatha Christie', 'Britânica'),
     ('Franz Kafka', 'Tcheca'),
-    ('Mary Shelley', 'Britânica');
+    ('Mary Shelley', 'Britânica'),
+    ('Fiódor Dostoiévski', 'Russo'),
+    ('Oscar Wilde', 'Irlandês'),
+    ('Virginia Woolf', 'Britânica'),
+    ('Leo Tolstói', 'Russo');
 
 -- 3. CLIENTES
 

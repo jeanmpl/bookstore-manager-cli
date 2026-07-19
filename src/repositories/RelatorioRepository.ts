@@ -120,7 +120,7 @@ export class RelatorioRepository {
         FROM autores AS a
         LEFT JOIN livros AS l ON l.autor_id = a.id
         LEFT JOIN totais_por_autor AS t ON t.autor_id = a.id
-        ORDER BY a.nome, l.titulo;
+        ORDER BY quantidade_total_de_livros DESC, a.nome, l.titulo;
       `,
     );
 
