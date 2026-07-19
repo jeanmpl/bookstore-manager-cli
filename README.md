@@ -130,14 +130,15 @@ Os nomes das variáveis devem ser os mesmos utilizados no arquivo responsável p
 
 ### 1. Clonar o repositório
 
-````bash
+```bash
 git clone https://github.com/jeanmpl/bookstore-manager-cli
+```
 
 ### 2. Entrar na pasta do projeto
 
 ```bash
 cd bookstore-manager-cli
-````
+```
 
 ### 3. Instalar as dependências
 
