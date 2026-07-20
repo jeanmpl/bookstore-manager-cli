@@ -69,63 +69,6 @@ psql --version
 
 ---
 
-## Configuração do banco de dados
-
-### 1. Criar o banco de dados
-
-Acesse o PostgreSQL pelo pgAdmin ou pelo terminal e crie um banco de dados para o projeto:
-
-```sql
-CREATE DATABASE bookstore_manager;
-```
-
-### 2. Executar o arquivo de estrutura
-
-Após criar o banco, execute o arquivo responsável pela criação das tabelas.
-
-Exemplo pelo terminal:
-
-```bash
-psql -U postgres -d bookstore_manager -f src/database/schema.sql
-```
-
-Também é possível abrir o arquivo `schema.sql` no Query Tool do pgAdmin e executar seu conteúdo.
-
-O banco de dados possui as principais tabelas:
-
-- `autores`;
-- `livros`;
-- `clientes`;
-- `emprestimos`.
-
-### 3. Popular o banco de dados
-
-Para inserir dados de exemplo, execute o arquivo de seed:
-
-```bash
-psql -U postgres -d bookstore_manager -f src/database/seed.sql
-```
-
-O seed contém autores, livros e clientes que podem ser utilizados para testar as funcionalidades da aplicação.
-
-### 4. Configurar as variáveis de ambiente
-
-Crie um arquivo chamado `.env` na raiz do projeto.
-
-Exemplo:
-
-```env
-DB_HOST=localhost
-DB_PORT=5432
-DB_USER=postgres
-DB_PASSWORD=sua_senha
-DB_NAME=bookstore_manager
-```
-
-Os nomes das variáveis devem ser os mesmos utilizados no arquivo responsável pela conexão com o banco de dados.
-
----
-
 ## Instalação
 
 ### 1. Clonar o repositório
@@ -148,7 +91,58 @@ npm install
 
 ### 4. Configurar o banco de dados
 
-Crie o banco, execute o `schema.sql`, execute opcionalmente o `seed.sql` e configure o arquivo `.env`.
+### 4.1 Criar o banco de dados
+
+Acesse o PostgreSQL pelo pgAdmin ou pelo terminal e crie um banco de dados para o projeto:
+
+```sql
+CREATE DATABASE bookstore_manager;
+```
+
+### 4.2 Executar o arquivo de estrutura
+
+Após criar o banco, execute o arquivo responsável pela criação das tabelas.
+
+Exemplo pelo terminal:
+
+```bash
+psql -U postgres -d bookstore_manager -f src/database/schema.sql
+```
+
+Também é possível abrir o arquivo `schema.sql` no Query Tool do pgAdmin e executar seu conteúdo.
+
+O banco de dados possui as principais tabelas:
+
+- `autores`;
+- `livros`;
+- `clientes`;
+- `emprestimos`.
+
+### 4.3 Popular o banco de dados
+
+Para inserir dados de exemplo, execute o arquivo de seed:
+
+```bash
+psql -U postgres -d bookstore_manager -f src/database/seed.sql
+```
+
+O seed contém autores, livros e clientes que podem ser utilizados para testar as funcionalidades da aplicação.
+
+### 4.4 Configurar as variáveis de ambiente
+
+Crie um arquivo chamado `.env` na raiz do projeto.
+
+Exemplo:
+
+```env
+DB_HOST=localhost
+DB_PORT=5432
+DB_USER=postgres
+DB_PASSWORD=sua_senha
+DB_NAME=bookstore_manager
+```
+
+Os nomes das variáveis devem ser os mesmos utilizados no arquivo responsável pela conexão com o banco de dados.
 
 ---
 
